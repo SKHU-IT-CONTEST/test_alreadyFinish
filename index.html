@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> <!--api를 https로 호출 -->
+    <meta name="viewport" content="initial-scale=0.5, width=device-width, user-scalable=no">
+    <title>쿠름이</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/front-part_2.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--    <link href="https://fonts.googleapis.com/css2?family=Sunflower&display=swap" rel="stylesheet">-->
+<!--    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- 나눔 펜 스크립트 - 하트 폰트용 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <script src="js/button.js"></script>
+    <script src="js/schoolNotice.js"></script>
+    <script src="js/banner.js"></script>
+    <script src="js/weather.js"></script>
+
+
+</head>
+
+<body>
+<div id="back">
+    <!--제목부터 part1까지 묶었어요. 여기 날씨 정보 박스 밑에 part2 공지사항 넣어주세욤-->
+    <!-- 맨 위에 제목 부분 -->
+    <div id="header">
+        <p id="head-in">성공회대학교 날씨제공 서비스<br> "쿠름이"</p>
+    </div>
+    <!-- 맨 위에 제목 부분 -->
+
+    <!--part2 공지사항 박스 part2-->
+    <div class="rollingbanner">
+        <div class="title" style="font-size: 53px; display: inline-flex;">
+            campaign
+        </div>
+        <div class="wrap">
+            <ul>
+            </ul>
+        </div>
+
+    </div>
+    <!--part2 공지사항 박스 part2-->
+
+    <!--part1 날씨 정보 박스-->
+    <div class="text-box">
+        <p class="location">
+        <span class="material-icons"
+              style="font-size: xx-large; display: inline-flex; flex-direction: row; padding-right: 20px;">
+          my_location
+        </span>
+            성공회대학교 현재 날씨
+        </p>
+        <p class="temp-box">
+        <span class="temp" id="temperature">
+
+        </span>
+            <!--날씨 아이콘-->
+            <img src="img/sun.svg" class="weather-icon" style="width: 7em; padding-right: 10%;">
+            <!--날씨 아이콘-->
+        </p>
+        <p class="cloudy">
+        <span class="material-icons"
+              style="font-size: xx-large; display: inline-flex; flex-direction: row; padding-right: 20px;">
+          wb_cloudy
+        </span>강수 확률 :
+        </p>
+        <p class="water">
+        <span class="material-icons"
+              style="font-size: xx-large; display: inline-flex; flex-direction: row; padding-right: 20px;">
+          water_drop
+        </span>습도 :
+        </p>
+        <p class="turtle-box">
+        <span class="skhu-turtle">
+          회부기는 지금<br>
+          undefined.
+        </span>
+            <!-- 회부기 아이콘 -->
+            <img src="img/회부기.svg" class="turtle-icon" style="width: 7em; padding-right: 9.3%;">
+            <!-- 회부기 아이콘 -->
+        </p>
+    </div>
+    <div class="stu-respo">
+
+    </div>
+</div>
+
+
+<!--시간날씨강수량 part2-->
+<table class="wea">
+    <!--시간과 날씨-->
+    <td class="tmwt">
+        <span class="time">00시</span>
+        <span class="weatherimg"><img src="img/rain.svg" width="120" height="120" alt="날씨사진"></span>
+        <span class="tem">23도</span>
+        <span class="precipitation">강수량</span>
+    </td>
+    <td class="tmwt">
+        <span class="time">00시</span>
+        <span class="weatherimg"><img src="img/sun.svg" width="120" height="120" alt="날씨사진"></span>
+        <span class="tem">23도</span>
+        <span class="precipitation">강수량</span>
+    </td>
+    <td class="tmwt">
+        <span class="time">00시</span>
+        <span class="weatherimg"><img src="img/suncloud.svg" width="120" height="120" alt="날씨사진"></span>
+        <span class="tem">23도</span>
+        <span class="precipitation">강수량</span>
+    </td>
+</table>
+<!--시간날씨강수량 part2-->
+
+<!-- 주관식 응답 part3 -->
+<div class="part3">
+    <div class="answerArea">
+        <!-- <button id="plus-button" class="button-style" onclick="CreateButton()">+</button> -->
+        <input type="text" id="answer" class="inputButtonStyle" onkeypress="if(event.keyCode==13){TextBox();}"
+               onkeyup="characterCheck(this)" onkeydown="characterCheck(this)">
+        <div id="container"></div>
+    </div>
+    <!-- 주관식 응답 part3 -->
+    <div class="reportArea">
+    </div>
+</div>
+<!-- 하단 날씨 제보하기 영역 -->
+<div class="padding"></div>
+<div class="foot">
+    <button id="weather-tip" type="button" onclick="location.href='tip.html'">
+      <span class="material-icons-tip" style="font-size: 6em;">
+        notifications
+      </span>
+        <span class="text-tip">
+        지금 성공회대 날씨를 제보해주세요!
+      </span>
+    </button>
+</div>
+<!-- 하단 날씨 제보하기 영역 -->
+
+<script type="module" src = './node_modules/xml-js'></script>
+<script type="module" src='./node_modules/express'></script>
+<script type="module" src="./node_modules/moment"></script>
+<script type="module" src="./node_modules/fs"></script>
+<script type="module" src="./node_modules/request"></script>
+
+<script>
+
+    var convert = require('xml-js');
+    var express = require('express');
+    var moment = require('moment');
+    var fs = require('fs');
+    var request = require('request');
+    var app = express();
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true}));
+    // 데이터를 추출할 기준값인 날짜 4개를 변수에 저장
+    var nowDate = moment().format('YYYYMMDDHH00');
+    var oneHoursLaterDate = moment().add(1, 'h').format('YYYYMMDDHH00');
+    var twoHoursLaterDate = moment().add(2, 'h').format('YYYYMMDDHH00');
+    var threeHoursLaterDate = moment().add(3, 'h').format('YYYYMMDDHH00');
+
+    var a = "";
+    // 현재 데이터 + 앞으로의 3시간에 대한 데이터를 추출하기 위한 시간 데이터 배열 정의
+    var existableHoursArray = [nowDate, oneHoursLaterDate, twoHoursLaterDate, threeHoursLaterDate];
+    alert(existableHoursArray[1]);
+    var url = 'http://apis.data.go.kr/3160000/guroPointFocInfoSvc/getGuro10PointFocInfoSvc'; /*URL*/
+    var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'XXsK%2F1XwVTPaVFfkrpoBQapqSlNiziqMMJJRcS549BH3B2gH1ph4mkRwBJgDbI20uZDnt9SiLbsVlFT5%2FAHCBQ%3D%3D'; /*Service Key*/
+    queryParams += '&' + encodeURIComponent('returnType') + '=' + encodeURIComponent('xml'); /**/
+    queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+    queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+
+
+    request.get(url + queryParams, (err, res, body) => {
+        if (err) {
+            console.log(`err => ${err}`);
+        }
+        else {
+            if (res.statusCode === 200) {
+                var selectedData = JSON.parse(convert.xml2json(body, {compact:true, spaces: 4}));
+                a += "{" +  "\"" + "data" + "\"" + ":" + "[" + "{" + "\"" + "3hoursLater" + "\"" +  ":";
+                var tmpData = selectedData.response.body.items.item;
+
+                for (let i = 0; i < tmpData.length; i++) {
+                    if ((tmpData[i]['localCode']._text === "GURO_F08")
+                            && (tmpData[i]['fcsDate']._text === existableHoursArray[0])) {
+                        a +="," + "\"" + "nowWeather" + "\"" +  ":";a += JSON.stringify(tmpData[i]);
+                    }
+                    if((tmpData[i]['localCode']._text === "GURO_F08")
+                            && (tmpData[i]['fcsDate']._text === existableHoursArray[1])) {
+
+                        a += "," + "\"" + "1hoursLater" + "\"" +  ":";a += JSON.stringify(tmpData[i]); // 회대 지역(GURO_F08)의 내용만 추출하여 json 파일에 저장함
+                    }
+                    if((tmpData[i]['localCode']._text === "GURO_F08")
+                            && (tmpData[i]['fcsDate']._text === existableHoursArray[2])) {
+                        a += "," + "\"" + "2hoursLater" + "\"" +  ":"; a += JSON.stringify(tmpData[i]);
+                    }
+                    if((tmpData[i]['localCode']._text === "GURO_F08")
+                            && (tmpData[i]['fcsDate']._text === existableHoursArray[3])) {
+                        a += JSON.stringify(tmpData[i]);
+                    }
+                }
+                a += "} ] }"; // 데이터 추가 전의 "{ [ {" 기호에 알맞게 대응되도록 "} ] }" 기호 추가
+
+                fs.writeFileSync("/Users/hwangjaehyeon/Downloads/skhuweather.github.io-main 3/back-part_2/modified.json",a); // 저장되는 데이터는 1시간 간격으로 업데이트 처리됨
+            }
+        }
+    });
+
+     const k = fs.readFileSync('./back-part_2/modified.json', 'utf-8');
+
+</script>
+</body>
+</html>

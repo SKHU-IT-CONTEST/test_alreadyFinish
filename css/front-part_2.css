@@ -1,0 +1,123 @@
+/*banner*/
+.rollingbanner {
+	box-shadow: 5px 5px 5px gray;
+	background-color: rgba(227, 232, 242, 0.81);
+	box-sizing: border-box;
+	padding: 1.3em 1em 1.3em 2em;
+	margin: 20px 40px;
+	border-radius: 50px;
+	position: relative;
+	height: 70px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: -webkit-fill-available;
+}
+
+/* 타이틀 */
+.rollingbanner>.title {
+
+	font-family: 'Material Icons';
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+	position: absolute;
+    bottom: 16%;
+    left: 4%;
+	color: #707070;
+
+}
+
+/* 롤링 배너 */
+.rollingbanner>.wrap {
+	position: sticky;
+	height: 100%;
+	overflow: hidden;
+	left: 130px;
+	font-size: 30px;
+	font-weight: bold;
+	width: 20em;
+
+}
+
+.rolling ul {
+	list-style: none;
+	color: black;
+}
+
+.rollingbanner li {
+	position: absolute;
+	top: -36px;
+	left: 0;
+}
+
+/* 이전, 현재, 다음 롤링 배너 표시 */
+.rollingbanner .prev {
+	top: 36px;
+	transition: top 0.5s ease;
+}
+
+.rollingbanner .current {
+	top: 0;
+	transition: top 0.5s ease;
+}
+
+.rollingbanner .next {
+	top: -36px;
+}
+
+.rollingbanner a {
+	display: -webkit-box;
+	text-decoration: none;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	color: #000;
+	padding: 0px 1em 0px 1.2em;
+}
+
+
+
+
+/*timeandweather*/
+.wea {
+	border: 1px solid rgba(227, 232, 242, 0.81);
+	padding: 50px;
+	margin: 40px;
+	background-color: rgba(227, 232, 242, 0.81);
+	border-radius: 40px;
+	width: -webkit-fill-available;
+	height: 10%;
+	text-align: center;
+	box-shadow: 5px 5px 5px grey;
+}
+
+td {
+	padding: 10px;
+}
+
+.tmwt {
+	padding: 0 10px;
+}
+
+span.time {
+	display: block;
+	font-size: xx-large;
+	margin: 10px;
+}
+
+span.weatherimg {
+	display: block;
+}
+
+span.tem {
+	font-size: xx-large;
+
+}
+
+span.precipitation {
+	display: block;
+	font-size: xx-large;
+	margin: 10px;
+}

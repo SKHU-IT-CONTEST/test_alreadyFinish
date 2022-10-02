@@ -1,0 +1,301 @@
+
+/* 나눔 펜 스크립트 - 하트 폰트용 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+*{
+    margin: 0px;
+    font-family: 'SeoulNamsanM';
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+body{
+    background: url(/img/bgimg.jpeg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;   
+    /* 배경이미지 고정방식 */
+    padding-bottom: 250px;
+}
+#back{
+    padding: 20px 0px 20px 0px;
+    color: white;
+}
+#header{
+    margin-left: 20px;
+    font-weight: normal;
+    text-shadow: 5px 5px 10px black;
+    letter-spacing: 5px;
+    text-align: center;
+    line-height: 4rem;
+}
+#head-in{
+    padding-top: 8px;
+    font-size: 37px;
+    font-family: 'SeoulNamsanM';
+    margin: 40px 20px 45px 20px;
+}
+.material-icons {
+    font-family: 'Material Icons';
+    position: relative;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  }
+.material-icons-outlined {
+    font-family: 'Material Icons';
+    position: relative;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    color: white;
+    text-shadow: 5px 5px 10px black;
+  }
+.text-box{
+    border-radius: 50px;
+    background-color: rgba(227, 232, 242, 0.81);
+    box-shadow: 5px 5px 5px grey;
+    padding: 40px 40px 40px 50px;
+    margin: 20px 40px;
+    color: black;
+    float: left;
+    width: -webkit-fill-available;
+
+}
+.location{
+    font-size: xx-large;
+    font-weight: lighter;
+    display: inline-flex;
+    flex-direction: row;
+}
+.temp{
+    font-size: 4em;
+    padding: 40px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.293);
+}
+.weater-icon{
+    padding-right: 20px;
+}
+.temp-box{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between ;
+}
+.cloudy{
+    font-size: xx-large;
+    padding: 10px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.293);
+    margin: 20px;
+}
+.water{
+    font-size: xx-large;
+    padding: 10px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.293);
+    margin: 20px;
+}
+.skhu-turtle{
+    font-size: xx-large;
+    padding: 0.5em 0em 0em 1em;
+    width: 65%;  
+    line-height: 1.5;  
+
+}
+.turtle-box{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+/* 파트3 버튼 스타일 */
+.part3 {
+    /* position: absolute; */
+    /* display: inline; */
+    /* height: 10%; */
+    /* overflow: scroll; */
+    /* width: fit-content; */
+    margin: 10px 30px;
+    display: block;
+    width: -webkit-fill-available;
+  }
+.answerArea {
+    height: 16.3rem;
+    overflow: scroll;
+    width: initial;
+    padding-left: 1em;
+}
+.inputButtonStyle, .buttonStyle {
+  font-family: 'SeoulNamsanM';
+  font-size: 35px;
+  background-color: #ffffffcc;
+  font-size: 33px;
+  padding: 0.5em 0.6em;
+  border: none;
+  border-radius: 32.5px;
+  box-shadow: 0px 5px 5px 5px gray;
+  float: left;
+  display: inline-flex;
+}
+.inputButtonStyle {
+  margin: 0.2em;
+  width: 5em;
+  height: 1.2em;
+}
+.buttonStyle {
+  margin: 0.2em;
+}
+.heartStyle {
+  position: relative;
+  color: red;
+  -webkit-text-stroke: 1px black;
+  font-size: 36px;
+}
+
+  /* 파트3 버튼 스타일 */
+
+  .padding {
+    height: 171px
+  }
+/* 제보하기 내가는 것 임시 방편 ㅋㅋㅋ */
+/* 하단 날씨 제보하기 영역 */
+.foot{
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+    background-color: rgba(227, 232, 242, 0.81);
+    text-align: center;
+    border-style: none;
+    display: inline-block;
+    margin-top: 20px;
+    position : fixed;
+	bottom: 0px;
+    left: 0;
+    /* 일단 주석 처리 -> 화면 크기에 따라서 absolute가 다른 div 들을 먹음 */
+}
+#weather-tip{
+    text-align: center;
+    width: 94%;
+    height: 120px;
+    margin: 25.5px;
+    border-radius: 60px;
+    background-color: rgba(54 112 152 / 74%);
+    box-shadow:0 0 10px 5px rgb(135, 135, 135);   
+    border-style: none;
+    color: white;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.material-icons-tip {
+    font-family: 'Material Icons';
+    position: relative;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  }
+
+.text-tip{
+    font-size: 2.5rem;
+    text-shadow: 5px 5px 2px rgb(123 123 123);
+    text-shadow: 5px 5px 8px rgb(104, 104, 104);
+}
+
+/* 하단 날씨 제보하기 영역 */
+
+/* 날씨제보 html 영역 */
+#head-in2{
+  padding-top: 8px;
+  font-size: 37px;
+  font-family: 'SeoulNamsanM';
+  margin: 40px 20px 45px 20px;
+  line-height: 1.5em;
+}
+
+#top-title{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.icon-box{
+    border-radius: 50px;
+    background-color: rgba(227, 232, 242, 0.81);
+    padding: 40px 0px 40px 0px;
+    margin: 20px;
+    color: black;
+    height: fit-content;
+}
+#give_tip{
+    font-size: 2.3em;
+    margin: 1em;
+    text-align: center;
+}
+.turtle-sit{
+    font-size: 100px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex: 1;
+    /* flex-wrap: wrap; */
+}
+.material-icons-back {
+    font-family: 'Material Icons';
+    position: relative;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    border-style: none;
+    /* background-color: transparent;
+    color: white;
+    text-shadow: 5px 5px 8px rgb(104, 104, 104); */
+  }
+#weather-tip2{
+    text-align: center;
+    width: 94%;
+    height: 120px;
+    margin: 25.5px;
+    border-radius: 60px;
+    background-color: rgba(0, 147, 240, 1);
+    box-shadow:0 0 10px 5px rgb(135, 135, 135);   
+    border-style: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+#header2{
+    margin-left: 20px;
+    font-weight: normal;
+    text-shadow: 5px 5px 10px black;
+    letter-spacing: 5px;
+    text-align: center;
+    margin: 20px;
+    padding: 20px 0px 20px 0px;
+    color: white;
+}
+.foot2{
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+    background-color: rgba(227, 232, 242, 0.81);
+    text-align: center;
+    display: inline-block;
+}
+ul{
+    list-style: none;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+}
+.turtle-feel{
+    display: inline-block;
+    text-align: center;
+    width: 180px;
+}
+.padding2 {
+  height: 101px
+}
+/* 날씨
+제보 html 영역 */
